@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 1ddd5565306eb5a49854a657d5e4e4a9
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Ch Games
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 046cbdecefadd1b40b52011f5599f29b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
