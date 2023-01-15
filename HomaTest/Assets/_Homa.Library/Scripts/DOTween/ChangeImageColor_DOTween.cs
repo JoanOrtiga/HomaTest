@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace _Homa.Sudoku.Scripts.UI
@@ -13,16 +14,16 @@ namespace _Homa.Sudoku.Scripts.UI
         [SerializeField] private float duration;
         [SerializeField] private Color endColor;
 
-        [SerializeField] private UnityEvent OnComplete;
-        
+        [SerializeField] private UnityEvent onComplete;
+
         public void PlayAnimation()
         {
-            target.DOColor(endColor, duration).SetEase(ease).onComplete += OnComplete.Invoke;
+            target.DOColor(endColor, duration).SetEase(ease).onComplete += () => onComplete?.Invoke();
         }
-        
+
         public void PlayAnimation(Color targetColor)
         {
-            target.DOColor(targetColor, duration).SetEase(ease).onComplete += OnComplete.Invoke;
+            target.DOColor(targetColor, duration).SetEase(ease).onComplete += () => onComplete?.Invoke();
         }
     }
 }

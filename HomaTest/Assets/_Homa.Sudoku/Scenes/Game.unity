@@ -211,8 +211,9 @@ GameObject:
   - component: {fileID: 57521159}
   - component: {fileID: 57521161}
   - component: {fileID: 57521160}
+  - component: {fileID: 57521162}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SelectNumberTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,6 +336,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57521158}
   m_CullTransparentMesh: 1
+--- !u!114 &57521162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57521158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded7816184d64575820427eaa35a9237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 57521160}
+  ease: 12
+  duration: 0.4
+  endColor: {r: 0.9622642, g: 0.958728, b: 0.8841937, a: 1}
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &99530211
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,8 +466,9 @@ GameObject:
   - component: {fileID: 115520333}
   - component: {fileID: 115520335}
   - component: {fileID: 115520334}
+  - component: {fileID: 115520336}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SelectNumberTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -570,6 +591,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115520332}
   m_CullTransparentMesh: 1
+--- !u!114 &115520336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115520332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded7816184d64575820427eaa35a9237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 115520334}
+  ease: 12
+  duration: 0.4
+  endColor: {r: 0.9622642, g: 0.958728, b: 0.8841937, a: 1}
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &116216717
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,6 +2293,7 @@ GameObject:
   - component: {fileID: 550943846}
   - component: {fileID: 550943848}
   - component: {fileID: 550943849}
+  - component: {fileID: 550943850}
   m_Layer: 5
   m_Name: SelectNumberButton
   m_TagString: Untagged
@@ -2376,6 +2417,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 624529890}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.UI.SelectionNumberAnimator,
+          Assembly-CSharp
+        m_MethodName: SetCurrentItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &550943849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2397,6 +2451,25 @@ MonoBehaviour:
   click: 0
   hoverEnter: 0
   hoverExit: 0
+--- !u!114 &550943850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550943844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956e8dfe2c454221b249ce6e512459d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 550943846}
+  ease: 12
+  duration: 0.4
+  endColor: {r: 0.34901962, g: 0.25490198, b: 0.6627451, a: 1}
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &555920034
 GameObject:
   m_ObjectHideFlags: 0
@@ -2410,6 +2483,7 @@ GameObject:
   - component: {fileID: 555920036}
   - component: {fileID: 555920038}
   - component: {fileID: 555920039}
+  - component: {fileID: 555920040}
   m_Layer: 5
   m_Name: SelectNumberButton
   m_TagString: Untagged
@@ -2533,6 +2607,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 624529890}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.UI.SelectionNumberAnimator,
+          Assembly-CSharp
+        m_MethodName: SetCurrentItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &555920039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2554,6 +2641,25 @@ MonoBehaviour:
   click: 0
   hoverEnter: 0
   hoverExit: 0
+--- !u!114 &555920040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555920034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956e8dfe2c454221b249ce6e512459d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 555920036}
+  ease: 12
+  duration: 0.4
+  endColor: {r: 0.34901962, g: 0.25490198, b: 0.6627451, a: 1}
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &596634738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2567,6 +2673,7 @@ GameObject:
   - component: {fileID: 596634740}
   - component: {fileID: 596634742}
   - component: {fileID: 596634743}
+  - component: {fileID: 596634744}
   m_Layer: 5
   m_Name: SelectNumberButton (1)
   m_TagString: Untagged
@@ -2690,6 +2797,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 624529890}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.UI.SelectionNumberAnimator,
+          Assembly-CSharp
+        m_MethodName: SetCurrentItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &596634743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2711,6 +2831,25 @@ MonoBehaviour:
   click: 0
   hoverEnter: 0
   hoverExit: 0
+--- !u!114 &596634744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596634738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956e8dfe2c454221b249ce6e512459d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 596634740}
+  ease: 12
+  duration: 0.4
+  endColor: {r: 0.34901962, g: 0.25490198, b: 0.6627451, a: 1}
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &602166667
 GameObject:
   m_ObjectHideFlags: 0
@@ -2722,8 +2861,9 @@ GameObject:
   - component: {fileID: 602166668}
   - component: {fileID: 602166670}
   - component: {fileID: 602166669}
+  - component: {fileID: 602166671}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SelectNumberTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2846,6 +2986,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602166667}
   m_CullTransparentMesh: 1
+--- !u!114 &602166671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602166667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded7816184d64575820427eaa35a9237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 602166669}
+  ease: 12
+  duration: 0.4
+  endColor: {r: 0.9622642, g: 0.958728, b: 0.8841937, a: 1}
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &624529885
 GameObject:
   m_ObjectHideFlags: 0
@@ -2857,6 +3016,7 @@ GameObject:
   - component: {fileID: 624529886}
   - component: {fileID: 624529888}
   - component: {fileID: 624529889}
+  - component: {fileID: 624529890}
   m_Layer: 5
   m_Name: Sudoku Select Numbers
   m_TagString: Untagged
@@ -2920,6 +3080,50 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &624529890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624529885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b8650eef32a71740b207940fba1a826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _notSelectedButton: {r: 0.9725491, g: 0.8117648, b: 0, a: 1}
+  _selectedButton: {r: 0.34901962, g: 0.25490198, b: 0.6627451, a: 1}
+  _selectedTxt: {r: 0.9607844, g: 0.9568628, b: 0.882353, a: 1}
+  _notSelectedTxt: {r: 0.17254902, g: 0.098039225, b: 0.4156863, a: 1}
+  _selectNumberItems:
+  - changeColorButton: {fileID: 555920040}
+    changeColorText: {fileID: 115520336}
+    changeScaleButton: {fileID: 555920039}
+  - changeColorButton: {fileID: 596634744}
+    changeColorText: {fileID: 1400969914}
+    changeScaleButton: {fileID: 596634743}
+  - changeColorButton: {fileID: 1380468095}
+    changeColorText: {fileID: 1137241757}
+    changeScaleButton: {fileID: 1380468094}
+  - changeColorButton: {fileID: 762032828}
+    changeColorText: {fileID: 602166671}
+    changeScaleButton: {fileID: 762032827}
+  - changeColorButton: {fileID: 910490305}
+    changeColorText: {fileID: 57521162}
+    changeScaleButton: {fileID: 910490304}
+  - changeColorButton: {fileID: 550943850}
+    changeColorText: {fileID: 1997030022}
+    changeScaleButton: {fileID: 550943849}
+  - changeColorButton: {fileID: 741654653}
+    changeColorText: {fileID: 977436084}
+    changeScaleButton: {fileID: 741654652}
+  - changeColorButton: {fileID: 1136822660}
+    changeColorText: {fileID: 1084455063}
+    changeScaleButton: {fileID: 1136822659}
+  - changeColorButton: {fileID: 636904139}
+    changeColorText: {fileID: 2039487799}
+    changeScaleButton: {fileID: 636904138}
 --- !u!1 &636904133
 GameObject:
   m_ObjectHideFlags: 0
@@ -2933,6 +3137,7 @@ GameObject:
   - component: {fileID: 636904135}
   - component: {fileID: 636904137}
   - component: {fileID: 636904138}
+  - component: {fileID: 636904139}
   m_Layer: 5
   m_Name: SelectNumberButton (3)
   m_TagString: Untagged
@@ -3056,6 +3261,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 624529890}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.UI.SelectionNumberAnimator,
+          Assembly-CSharp
+        m_MethodName: SetCurrentItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &636904138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3077,6 +3295,25 @@ MonoBehaviour:
   click: 0
   hoverEnter: 0
   hoverExit: 0
+--- !u!114 &636904139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636904133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956e8dfe2c454221b249ce6e512459d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 636904135}
+  ease: 12
+  duration: 0.4
+  endColor: {r: 0.34901962, g: 0.25490198, b: 0.6627451, a: 1}
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &688427996
 GameObject:
   m_ObjectHideFlags: 0
@@ -3290,6 +3527,7 @@ GameObject:
   - component: {fileID: 741654649}
   - component: {fileID: 741654651}
   - component: {fileID: 741654652}
+  - component: {fileID: 741654653}
   m_Layer: 5
   m_Name: SelectNumberButton (1)
   m_TagString: Untagged
@@ -3413,6 +3651,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 624529890}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.UI.SelectionNumberAnimator,
+          Assembly-CSharp
+        m_MethodName: SetCurrentItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &741654652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3434,6 +3685,25 @@ MonoBehaviour:
   click: 0
   hoverEnter: 0
   hoverExit: 0
+--- !u!114 &741654653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741654647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956e8dfe2c454221b249ce6e512459d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 741654649}
+  ease: 12
+  duration: 0.4
+  endColor: {r: 0.34901962, g: 0.25490198, b: 0.6627451, a: 1}
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &756207895
 GameObject:
   m_ObjectHideFlags: 0
@@ -3675,6 +3945,7 @@ GameObject:
   - component: {fileID: 762032824}
   - component: {fileID: 762032826}
   - component: {fileID: 762032827}
+  - component: {fileID: 762032828}
   m_Layer: 5
   m_Name: SelectNumberButton (3)
   m_TagString: Untagged
@@ -3798,6 +4069,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 624529890}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.UI.SelectionNumberAnimator,
+          Assembly-CSharp
+        m_MethodName: SetCurrentItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &762032827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3819,6 +4103,25 @@ MonoBehaviour:
   click: 0
   hoverEnter: 0
   hoverExit: 0
+--- !u!114 &762032828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762032822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956e8dfe2c454221b249ce6e512459d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 762032824}
+  ease: 12
+  duration: 0.4
+  endColor: {r: 0.34901962, g: 0.25490198, b: 0.6627451, a: 1}
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &772060444
 GameObject:
   m_ObjectHideFlags: 0
@@ -4509,6 +4812,7 @@ GameObject:
   - component: {fileID: 910490301}
   - component: {fileID: 910490303}
   - component: {fileID: 910490304}
+  - component: {fileID: 910490305}
   m_Layer: 5
   m_Name: SelectNumberButton (4)
   m_TagString: Untagged
@@ -4632,6 +4936,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 624529890}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.UI.SelectionNumberAnimator,
+          Assembly-CSharp
+        m_MethodName: SetCurrentItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &910490304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4653,6 +4970,25 @@ MonoBehaviour:
   click: 0
   hoverEnter: 0
   hoverExit: 0
+--- !u!114 &910490305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910490299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956e8dfe2c454221b249ce6e512459d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 910490301}
+  ease: 12
+  duration: 0.4
+  endColor: {r: 0.34901962, g: 0.25490198, b: 0.6627451, a: 1}
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &968773041
 GameObject:
   m_ObjectHideFlags: 0
@@ -4913,8 +5249,9 @@ GameObject:
   - component: {fileID: 977436081}
   - component: {fileID: 977436083}
   - component: {fileID: 977436082}
+  - component: {fileID: 977436084}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SelectNumberTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5037,6 +5374,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977436080}
   m_CullTransparentMesh: 1
+--- !u!114 &977436084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977436080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded7816184d64575820427eaa35a9237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 977436082}
+  ease: 12
+  duration: 0.4
+  endColor: {r: 0.9622642, g: 0.958728, b: 0.8841937, a: 1}
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &982275017
 GameObject:
   m_ObjectHideFlags: 0
@@ -5328,8 +5684,9 @@ GameObject:
   - component: {fileID: 1084455060}
   - component: {fileID: 1084455062}
   - component: {fileID: 1084455061}
+  - component: {fileID: 1084455063}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SelectNumberTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5452,6 +5809,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084455059}
   m_CullTransparentMesh: 1
+--- !u!114 &1084455063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084455059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded7816184d64575820427eaa35a9237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1084455061}
+  ease: 12
+  duration: 0.4
+  endColor: {r: 0.9622642, g: 0.958728, b: 0.8841937, a: 1}
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1104186960
 GameObject:
   m_ObjectHideFlags: 0
@@ -5655,6 +6031,7 @@ GameObject:
   - component: {fileID: 1136822656}
   - component: {fileID: 1136822658}
   - component: {fileID: 1136822659}
+  - component: {fileID: 1136822660}
   m_Layer: 5
   m_Name: SelectNumberButton (2)
   m_TagString: Untagged
@@ -5778,6 +6155,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 624529890}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.UI.SelectionNumberAnimator,
+          Assembly-CSharp
+        m_MethodName: SetCurrentItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1136822659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5799,6 +6189,25 @@ MonoBehaviour:
   click: 0
   hoverEnter: 0
   hoverExit: 0
+--- !u!114 &1136822660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136822654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956e8dfe2c454221b249ce6e512459d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1136822656}
+  ease: 12
+  duration: 0.4
+  endColor: {r: 0.34901962, g: 0.25490198, b: 0.6627451, a: 1}
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1137241753
 GameObject:
   m_ObjectHideFlags: 0
@@ -5810,8 +6219,9 @@ GameObject:
   - component: {fileID: 1137241754}
   - component: {fileID: 1137241756}
   - component: {fileID: 1137241755}
+  - component: {fileID: 1137241757}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SelectNumberTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5934,6 +6344,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137241753}
   m_CullTransparentMesh: 1
+--- !u!114 &1137241757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137241753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded7816184d64575820427eaa35a9237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1137241755}
+  ease: 12
+  duration: 0.4
+  endColor: {r: 0.9622642, g: 0.958728, b: 0.8841937, a: 1}
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1154958837
 GameObject:
   m_ObjectHideFlags: 0
@@ -6831,6 +7260,7 @@ GameObject:
   - component: {fileID: 1380468091}
   - component: {fileID: 1380468093}
   - component: {fileID: 1380468094}
+  - component: {fileID: 1380468095}
   m_Layer: 5
   m_Name: SelectNumberButton (2)
   m_TagString: Untagged
@@ -6954,6 +7384,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 624529890}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.UI.SelectionNumberAnimator,
+          Assembly-CSharp
+        m_MethodName: SetCurrentItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1380468094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6975,6 +7418,25 @@ MonoBehaviour:
   click: 0
   hoverEnter: 0
   hoverExit: 0
+--- !u!114 &1380468095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380468089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956e8dfe2c454221b249ce6e512459d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1380468091}
+  ease: 12
+  duration: 0.4
+  endColor: {r: 0.34901962, g: 0.25490198, b: 0.6627451, a: 1}
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1400969910
 GameObject:
   m_ObjectHideFlags: 0
@@ -6986,8 +7448,9 @@ GameObject:
   - component: {fileID: 1400969911}
   - component: {fileID: 1400969913}
   - component: {fileID: 1400969912}
+  - component: {fileID: 1400969914}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SelectNumberTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7110,6 +7573,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400969910}
   m_CullTransparentMesh: 1
+--- !u!114 &1400969914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400969910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded7816184d64575820427eaa35a9237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1400969912}
+  ease: 12
+  duration: 0.4
+  endColor: {r: 0.9622642, g: 0.958728, b: 0.8841937, a: 1}
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1401941369
 GameObject:
   m_ObjectHideFlags: 0
@@ -13060,8 +13542,9 @@ GameObject:
   - component: {fileID: 1997030019}
   - component: {fileID: 1997030021}
   - component: {fileID: 1997030020}
+  - component: {fileID: 1997030022}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SelectNumberTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13184,6 +13667,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997030018}
   m_CullTransparentMesh: 1
+--- !u!114 &1997030022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997030018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded7816184d64575820427eaa35a9237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1997030020}
+  ease: 12
+  duration: 0.4
+  endColor: {r: 0.9622642, g: 0.958728, b: 0.8841937, a: 1}
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2026403446
 GameObject:
   m_ObjectHideFlags: 0
@@ -13271,8 +13773,9 @@ GameObject:
   - component: {fileID: 2039487796}
   - component: {fileID: 2039487798}
   - component: {fileID: 2039487797}
+  - component: {fileID: 2039487799}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SelectNumberTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13395,6 +13898,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2039487795}
   m_CullTransparentMesh: 1
+--- !u!114 &2039487799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039487795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded7816184d64575820427eaa35a9237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2039487797}
+  ease: 12
+  duration: 0.4
+  endColor: {r: 0.9622642, g: 0.958728, b: 0.8841937, a: 1}
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2111682362
 GameObject:
   m_ObjectHideFlags: 0
