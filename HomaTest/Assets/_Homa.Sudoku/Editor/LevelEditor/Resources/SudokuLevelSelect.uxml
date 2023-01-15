@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="Header">
+        <uie:ObjectField name="LevelsCollection" allow-scene-objects="false" tooltip="Insert a Level Collection that you want to work with." style="margin-top: 9px; margin-bottom: 9px;" />
+        <uie:Toolbar style="justify-content: space-around; flex-direction: column; margin-top: 0;">
+            <uie:ToolbarSearchField focusable="true" name="SearchBar" tooltip="Filter content" style="justify-content: flex-start; width: auto; min-width: 32px; align-items: center; flex-direction: row; margin-left: 2px;" />
+        </uie:Toolbar>
+        <ui:VisualElement style="flex-direction: row; justify-content: center; margin-left: 10px; margin-right: 10px; margin-top: 5px; margin-bottom: 5px;">
+            <ui:Button tabindex="-1" text="+" display-tooltip-when-elided="true" name="AddLevelButton" tooltip="Add new level" style="flex-grow: 1;" />
+            <ui:Button tabindex="-1" text="-" display-tooltip-when-elided="true" name="RemoveLevelButton" tooltip="Remove selected level" style="flex-grow: 1;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <_Homa.Sudoku.Editor.LevelEditor.Scripts.LevelsListView focusable="true" name="LevelsList" reorder-mode="Animated" reorderable="true" show-add-remove-footer="false" fixed-item-height="20" virtualization-method="DynamicHeight" show-border="true" show-foldout-header="false" tooltip="Level list" style="flex-grow: 1;" />
+</ui:UXML>

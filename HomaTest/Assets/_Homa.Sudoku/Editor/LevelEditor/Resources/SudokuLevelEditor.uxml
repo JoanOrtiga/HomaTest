@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="SudokuLevelSelect" src="project://database/Assets/_Homa.Sudoku/Editor/LevelEditor/Resources/SudokuLevelSelect.uxml?fileID=9197481963319205126&amp;guid=bc4cd4fbcef134e40b046c24a5e08dcc&amp;type=3#SudokuLevelSelect" />
+    <ui:Template name="SudokuEditor" src="project://database/Assets/_Homa.Sudoku/Editor/LevelEditor/Resources/SudokuEditor.uxml?fileID=9197481963319205126&amp;guid=9674e8ebcfe915448a6fff0c9cd093de&amp;type=3#SudokuEditor" />
+    <_Homa.Library.Editor.SplitView fixed-pane-initial-dimension="200" style="min-width: 700px; min-height: 500px; flex-direction: row; justify-content: space-between;">
+        <ui:VisualElement name="Left-Panel" style="min-width: 200px;">
+            <ui:Instance template="SudokuLevelSelect" name="LevelSelector" style="flex-grow: 1; min-width: auto;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Right-Panel" style="min-width: 580px;">
+            <ui:Instance template="SudokuEditor" name="SudokuEditor" style="flex-grow: 1;" />
+        </ui:VisualElement>
+    </_Homa.Library.Editor.SplitView>
+</ui:UXML>

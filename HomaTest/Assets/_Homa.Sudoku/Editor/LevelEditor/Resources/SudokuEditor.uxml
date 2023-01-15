@@ -1,0 +1,63 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="LevelSelected" style="flex-grow: 1; display: flex;">
+        <uie:Toolbar name="Header" style="flex-grow: 0; flex-shrink: 0; height: 65px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 1px; padding-right: 1px; padding-top: 2px; padding-bottom: 1px;">
+            <ui:VisualElement style="width: 114px; flex-grow: 0; height: 100%;">
+                <ui:Label text="Sudoku Size" display-tooltip-when-elided="true" style="align-items: center; -unity-text-align: upper-center;" />
+                <ui:VisualElement style="flex-direction: row; flex-grow: 1; margin-top: 5px;">
+                    <ui:VisualElement style="min-width: auto; min-height: auto; width: 58px; height: 100%;">
+                        <ui:Label text="Rows" display-tooltip-when-elided="true" style="margin-left: 3px; margin-right: 3px; margin-top: 2px; margin-bottom: 1px; height: 17px;" />
+                        <ui:Label text="Columns" display-tooltip-when-elided="true" style="margin-left: 3px; margin-right: 3px; margin-top: 2px; margin-bottom: 1px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement style="width: auto; flex-grow: 1;">
+                        <uie:IntegerField value="9" name="RowsField" is-delayed="true" />
+                        <uie:IntegerField value="9" name="ColumnsField" is-delayed="true" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Separator" style="width: 1px; height: 100%; background-color: rgb(0, 0, 0); margin-left: 2px; margin-right: 2px;" />
+            <ui:VisualElement style="height: 100%; width: 228px; justify-content: space-between;">
+                <ui:VisualElement name="Mistakes" style="flex-direction: row;">
+                    <ui:Label text="Mistakes" display-tooltip-when-elided="true" style="-unity-text-align: middle-left; width: 61px;" />
+                    <ui:SliderInt picking-mode="Ignore" value="3" high-value="7" show-input-field="true" low-value="1" name="MistakesField" style="flex-grow: 1;" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-direction: row;">
+                    <ui:Label text="Level ID" display-tooltip-when-elided="true" style="-unity-text-align: middle-left; width: 62px;" />
+                    <ui:TextField picking-mode="Ignore" text="Level 1" name="NameField" style="justify-content: space-around; align-items: stretch; flex-grow: 1;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Separator" style="width: 1px; height: 100%; background-color: rgb(0, 0, 0); margin-left: 2px; margin-right: 2px;" />
+        </uie:Toolbar>
+        <ui:VisualElement style="flex-direction: row; flex-grow: 1; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;">
+            <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="SudokuBoardScrollView" style="flex-grow: 1; display: flex; flex-shrink: 1; flex-direction: column; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; overflow: visible; flex-basis: auto; align-items: stretch; width: auto;">
+                <ui:VisualElement name="SudokuBoard" style="display: flex; flex-direction: row; width: 250px; flex-wrap: wrap;" />
+            </ui:ScrollView>
+            <_Homa.Library.Editor.SplitView orientation="Vertical" fixed-pane-initial-dimension="350" style="flex-grow: 0; width: 229px; border-left-width: 1px; border-left-color: rgb(35, 35, 35); border-right-color: rgb(35, 35, 35); border-top-color: rgb(35, 35, 35); border-bottom-color: rgb(35, 35, 35); border-right-width: 0; border-top-width: 0; border-bottom-width: 0; background-color: rgb(60, 60, 60); min-height: auto; min-width: 229px;">
+                <ui:VisualElement name="Top-panel" style="min-height: 125px;">
+                    <ui:VisualElement style="flex-direction: row; border-bottom-width: 1px; border-left-color: rgb(35, 35, 35); border-right-color: rgb(35, 35, 35); border-top-color: rgb(35, 35, 35); border-bottom-color: rgb(35, 35, 35); justify-content: flex-start; flex-wrap: nowrap;">
+                        <ui:Label text="Position" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; white-space: nowrap; width: 60px; border-right-width: 1px; border-left-color: rgb(35, 35, 35); border-right-color: rgb(35, 35, 35); border-top-color: rgb(35, 35, 35); border-bottom-color: rgb(35, 35, 35);" />
+                        <ui:VisualElement style="flex-direction: row; justify-content: space-around; flex-grow: 1;">
+                            <ui:Label text="Row" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; width: 32px;" />
+                            <uie:IntegerField value="42" readonly="true" name="RowPosition" style="width: 41px; margin-right: 0;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-direction: row; flex-grow: 1; justify-content: space-between;">
+                            <ui:Label text="Col" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; width: 27px;" />
+                            <uie:IntegerField value="42" readonly="true" name="ColumnPosition" style="width: 41px;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="SudokuCellInspector" style="flex-grow: 1;" />
+                    <ui:Button text="Remove cell" display-tooltip-when-elided="true" name="RemoveCellButton" style="margin-bottom: 10px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Bot-panel" style="margin-top: 3px; min-height: 80px;">
+                    <ui:VisualElement name="VisualElement" style="flex-grow: 1; margin-left: 2px; margin-right: 2px; margin-top: 10px; margin-bottom: 2px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; border-top-left-radius: 2px; border-bottom-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-left-color: rgb(31, 31, 31); border-right-color: rgb(31, 31, 31); border-top-color: rgb(31, 31, 31); border-bottom-color: rgb(31, 31, 31);">
+                        <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1">
+                            <ui:Label text="No errors." display-tooltip-when-elided="true" name="ConsoleText" style="-unity-text-align: upper-left; white-space: normal;" />
+                        </ui:ScrollView>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </_Homa.Library.Editor.SplitView>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="NoLevelSelected" orientation="Vertical" style="flex-grow: 1; display: none;">
+        <ui:Label text="Click + to create a new level, or select one for start to edit it." display-tooltip-when-elided="true" name="Label" style="-unity-text-align: middle-center; white-space: normal; flex-grow: 1;" />
+    </ui:VisualElement>
+</ui:UXML>
