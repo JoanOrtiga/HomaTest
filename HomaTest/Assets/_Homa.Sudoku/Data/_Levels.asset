@@ -1,0 +1,424 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a8a83a915244564f867fee6ce90f8fe, type: 3}
+  m_Name: _Levels
+  m_EditorClassIdentifier: 
+  <Levels>k__BackingField:
+  - {fileID: 6772319082465665450}
+  - {fileID: 955922119431326357}
+--- !u!114 &955922119431326357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d606373043f0e6941a6054ae3196fbe5, type: 3}
+  m_Name: Level 1
+  m_EditorClassIdentifier: 
+  id: Level 1
+  possibleMistakes: 3
+  cells:
+  - position: {x: 0, y: 3}
+    data:
+      numValue: 0
+      inputByUser: 0
+  - position: {x: 1, y: 3}
+    data:
+      numValue: 0
+      inputByUser: 0
+  - position: {x: 1, y: 4}
+    data:
+      numValue: 0
+      inputByUser: 0
+  - position: {x: 1, y: 5}
+    data:
+      numValue: 0
+      inputByUser: 0
+  - position: {x: 0, y: 5}
+    data:
+      numValue: 0
+      inputByUser: 0
+  - position: {x: 2, y: 5}
+    data:
+      numValue: 0
+      inputByUser: 0
+  - position: {x: 2, y: 4}
+    data:
+      numValue: 0
+      inputByUser: 0
+  - position: {x: 2, y: 3}
+    data:
+      numValue: 0
+      inputByUser: 0
+  totalRows: 9
+  totalColumns: 9
+--- !u!114 &4310976872885331278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d606373043f0e6941a6054ae3196fbe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+  possibleMistakes: 3
+  cells: []
+  totalRows: 9
+  totalColumns: 9
+--- !u!114 &6772319082465665450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d606373043f0e6941a6054ae3196fbe5, type: 3}
+  m_Name: Level 0
+  m_EditorClassIdentifier: 
+  id: Level 0
+  possibleMistakes: 3
+  cells:
+  - position: {x: 0, y: 0}
+    data:
+      numValue: 9
+      inputByUser: 0
+  - position: {x: 1, y: 0}
+    data:
+      numValue: 4
+      inputByUser: 0
+  - position: {x: 2, y: 0}
+    data:
+      numValue: 6
+      inputByUser: 0
+  - position: {x: 2, y: 1}
+    data:
+      numValue: 3
+      inputByUser: 0
+  - position: {x: 1, y: 1}
+    data:
+      numValue: 8
+      inputByUser: 0
+  - position: {x: 0, y: 1}
+    data:
+      numValue: 5
+      inputByUser: 0
+  - position: {x: 0, y: 2}
+    data:
+      numValue: 2
+      inputByUser: 0
+  - position: {x: 2, y: 2}
+    data:
+      numValue: 7
+      inputByUser: 0
+  - position: {x: 0, y: 3}
+    data:
+      numValue: 8
+      inputByUser: 1
+  - position: {x: 1, y: 3}
+    data:
+      numValue: 6
+      inputByUser: 0
+  - position: {x: 2, y: 3}
+    data:
+      numValue: 5
+      inputByUser: 0
+  - position: {x: 0, y: 4}
+    data:
+      numValue: 7
+      inputByUser: 0
+  - position: {x: 1, y: 4}
+    data:
+      numValue: 2
+      inputByUser: 0
+  - position: {x: 0, y: 5}
+    data:
+      numValue: 4
+      inputByUser: 0
+  - position: {x: 1, y: 5}
+    data:
+      numValue: 3
+      inputByUser: 0
+  - position: {x: 2, y: 5}
+    data:
+      numValue: 9
+      inputByUser: 0
+  - position: {x: 0, y: 6}
+    data:
+      numValue: 6
+      inputByUser: 0
+  - position: {x: 0, y: 7}
+    data:
+      numValue: 3
+      inputByUser: 0
+  - position: {x: 1, y: 7}
+    data:
+      numValue: 9
+      inputByUser: 0
+  - position: {x: 2, y: 6}
+    data:
+      numValue: 8
+      inputByUser: 0
+  - position: {x: 2, y: 7}
+    data:
+      numValue: 4
+      inputByUser: 0
+  - position: {x: 2, y: 8}
+    data:
+      numValue: 2
+      inputByUser: 0
+  - position: {x: 1, y: 8}
+    data:
+      numValue: 5
+      inputByUser: 0
+  - position: {x: 1, y: 6}
+    data:
+      numValue: 7
+      inputByUser: 1
+  - position: {x: 3, y: 8}
+    data:
+      numValue: 7
+      inputByUser: 0
+  - position: {x: 4, y: 8}
+    data:
+      numValue: 9
+      inputByUser: 1
+  - position: {x: 4, y: 7}
+    data:
+      numValue: 5
+      inputByUser: 0
+  - position: {x: 3, y: 7}
+    data:
+      numValue: 8
+      inputByUser: 1
+  - position: {x: 3, y: 6}
+    data:
+      numValue: 3
+      inputByUser: 0
+  - position: {x: 4, y: 6}
+    data:
+      numValue: 2
+      inputByUser: 0
+  - position: {x: 5, y: 6}
+    data:
+      numValue: 4
+      inputByUser: 0
+  - position: {x: 5, y: 8}
+    data:
+      numValue: 6
+      inputByUser: 0
+  - position: {x: 5, y: 5}
+    data:
+      numValue: 8
+      inputByUser: 0
+  - position: {x: 4, y: 5}
+    data:
+      numValue: 7
+      inputByUser: 0
+  - position: {x: 4, y: 4}
+    data:
+      numValue: 6
+      inputByUser: 0
+  - position: {x: 5, y: 4}
+    data:
+      numValue: 5
+      inputByUser: 0
+  - position: {x: 5, y: 3}
+    data:
+      numValue: 2
+      inputByUser: 1
+  - position: {x: 4, y: 3}
+    data:
+      numValue: 3
+      inputByUser: 0
+  - position: {x: 3, y: 3}
+    data:
+      numValue: 4
+      inputByUser: 0
+  - position: {x: 3, y: 4}
+    data:
+      numValue: 9
+      inputByUser: 0
+  - position: {x: 3, y: 2}
+    data:
+      numValue: 5
+      inputByUser: 0
+  - position: {x: 3, y: 1}
+    data:
+      numValue: 6
+      inputByUser: 0
+  - position: {x: 3, y: 0}
+    data:
+      numValue: 2
+      inputByUser: 0
+  - position: {x: 4, y: 0}
+    data:
+      numValue: 8
+      inputByUser: 1
+  - position: {x: 5, y: 0}
+    data:
+      numValue: 7
+      inputByUser: 0
+  - position: {x: 5, y: 1}
+    data:
+      numValue: 9
+      inputByUser: 0
+  - position: {x: 5, y: 2}
+    data:
+      numValue: 3
+      inputByUser: 0
+  - position: {x: 4, y: 2}
+    data:
+      numValue: 4
+      inputByUser: 0
+  - position: {x: 6, y: 0}
+    data:
+      numValue: 3
+      inputByUser: 0
+  - position: {x: 6, y: 1}
+    data:
+      numValue: 7
+      inputByUser: 0
+  - position: {x: 6, y: 2}
+    data:
+      numValue: 6
+      inputByUser: 0
+  - position: {x: 7, y: 2}
+    data:
+      numValue: 9
+      inputByUser: 0
+  - position: {x: 7, y: 1}
+    data:
+      numValue: 4
+      inputByUser: 0
+  - position: {x: 7, y: 0}
+    data:
+      numValue: 5
+      inputByUser: 0
+  - position: {x: 8, y: 1}
+    data:
+      numValue: 2
+      inputByUser: 1
+  - position: {x: 8, y: 2}
+    data:
+      numValue: 8
+      inputByUser: 0
+  - position: {x: 7, y: 3}
+    data:
+      numValue: 7
+      inputByUser: 0
+  - position: {x: 8, y: 3}
+    data:
+      numValue: 9
+      inputByUser: 0
+  - position: {x: 8, y: 4}
+    data:
+      numValue: 3
+      inputByUser: 0
+  - position: {x: 7, y: 4}
+    data:
+      numValue: 8
+      inputByUser: 1
+  - position: {x: 6, y: 4}
+    data:
+      numValue: 4
+      inputByUser: 0
+  - position: {x: 6, y: 5}
+    data:
+      numValue: 5
+      inputByUser: 1
+  - position: {x: 7, y: 5}
+    data:
+      numValue: 2
+      inputByUser: 0
+  - position: {x: 8, y: 5}
+    data:
+      numValue: 6
+      inputByUser: 0
+  - position: {x: 6, y: 6}
+    data:
+      numValue: 9
+      inputByUser: 0
+  - position: {x: 6, y: 7}
+    data:
+      numValue: 2
+      inputByUser: 0
+  - position: {x: 6, y: 8}
+    data:
+      numValue: 8
+      inputByUser: 0
+  - position: {x: 8, y: 8}
+    data:
+      numValue: 4
+      inputByUser: 0
+  - position: {x: 7, y: 8}
+    data:
+      numValue: 3
+      inputByUser: 0
+  - position: {x: 7, y: 7}
+    data:
+      numValue: 6
+      inputByUser: 0
+  - position: {x: 8, y: 7}
+    data:
+      numValue: 7
+      inputByUser: 0
+  - position: {x: 8, y: 6}
+    data:
+      numValue: 5
+      inputByUser: 0
+  - position: {x: 7, y: 6}
+    data:
+      numValue: 1
+      inputByUser: 0
+  - position: {x: 5, y: 7}
+    data:
+      numValue: 1
+      inputByUser: 1
+  - position: {x: 3, y: 5}
+    data:
+      numValue: 1
+      inputByUser: 0
+  - position: {x: 2, y: 4}
+    data:
+      numValue: 1
+      inputByUser: 0
+  - position: {x: 1, y: 2}
+    data:
+      numValue: 1
+      inputByUser: 0
+  - position: {x: 4, y: 1}
+    data:
+      numValue: 1
+      inputByUser: 0
+  - position: {x: 6, y: 3}
+    data:
+      numValue: 1
+      inputByUser: 0
+  - position: {x: 8, y: 0}
+    data:
+      numValue: 1
+      inputByUser: 1
+  - position: {x: 0, y: 8}
+    data:
+      numValue: 1
+      inputByUser: 0
+  totalRows: 9
+  totalColumns: 9
