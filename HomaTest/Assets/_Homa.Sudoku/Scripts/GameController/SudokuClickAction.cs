@@ -5,7 +5,7 @@ namespace _Homa.Sudoku.Scripts.GameController
 {
     public class SudokuClickAction : Singleton<SudokuClickAction>
     {
-        public int SelectedNumber { get; private set; }
+        public int SelectedNumber { get; private set; } = 0;
     
         public void SetSelectedNumber(int selectedNumber)
         {

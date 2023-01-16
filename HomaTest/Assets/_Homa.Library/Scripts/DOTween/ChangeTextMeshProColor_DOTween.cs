@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace _Homa.Sudoku.Scripts.UI
+namespace _Homa.Library.Scripts.DOTween
 {
     public class ChangeTextMeshProColor_DOTween : MonoBehaviour
     {

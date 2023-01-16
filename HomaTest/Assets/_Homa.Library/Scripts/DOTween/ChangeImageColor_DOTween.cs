@@ -1,10 +1,9 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-namespace _Homa.Sudoku.Scripts.UI
+namespace _Homa.Library.Scripts.DOTween
 {
     public class ChangeImageColor_DOTween : MonoBehaviour
     {
@@ -21,9 +20,13 @@ namespace _Homa.Sudoku.Scripts.UI
             target.DOColor(endColor, duration).SetEase(ease).onComplete += () => onComplete?.Invoke();
         }
 
-        public void PlayAnimation(Color targetColor)
+        public void PlayAnimation(Color targetColor, float animDuration = -1)
         {
-            target.DOColor(targetColor, duration).SetEase(ease).onComplete += () => onComplete?.Invoke();
+            if (animDuration <= 0)
+            {
+                animDuration = duration;
+            }
+            target.DOColor(targetColor, animDuration).SetEase(ease).onComplete += () => onComplete?.Invoke();
         }
     }
 }

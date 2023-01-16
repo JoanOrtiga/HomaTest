@@ -29,7 +29,7 @@ namespace _Homa.Sudoku.Scripts.Cell
 
         private void CellGotClicked()
         {
-            if(IsInputCorrect(SudokuClickAction.Instance.SelectedNumber))
+            if(IsInputCorrect(SudokuClickAction.Instance.SelectedNumber) && SudokuClickAction.Instance.SelectedNumber != 0)
             {
                 _cellView.ShowData();
                 _cellClick.enabled = false;
@@ -44,6 +44,11 @@ namespace _Homa.Sudoku.Scripts.Cell
         public void FillData(SudokuCell sudokuCell)
         {
             _sudokuCellData = sudokuCell.data;
+            if (!_sudokuCellData.inputByUser)
+            {
+                _cellClick.OnCellClicked -= CellGotClicked;
+                Destroy(_cellClick);
+            }
             _cellView.Initialize(_sudokuCellData);
         }
 
