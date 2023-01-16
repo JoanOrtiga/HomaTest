@@ -9,6 +9,8 @@ HomaTest/[Bb]uild/
 HomaTest/[Bb]uilds/
 HomaTest/[Ll]ogs/
 HomaTest/[Uu]ser[Ss]ettings/
+[Bb]uild/
+[Bb]uilds/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
