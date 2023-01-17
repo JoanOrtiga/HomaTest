@@ -1,6 +1,8 @@
+using System;
 using _Homa.Library.Scripts.CommonUIElements.Percentage;
 using _Homa.Sudoku.Scripts.Cell;
 using _Homa.Sudoku.Scripts.SudokuStatus.Mistakes;
+using _Homa.Sudoku.Scripts.SudokuStatus.TimeStat;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,6 +14,9 @@ namespace _Homa.Sudoku.Scripts.GameController
     {
         [SerializeField] private MistakeSystem mistakeSystem;
         [SerializeField] private PercentageViewUI percentageViewUI;
+        
+        [SerializeField] private LevelChangeAnimator levelChangeAnimator;
+        [SerializeField] private SudokuTime sudokuTime;
     
         private int _totalSudokuCells;
         private int _currentSudokuCells;
@@ -23,6 +28,20 @@ namespace _Homa.Sudoku.Scripts.GameController
         {
             mistakeSystem.OnLevelFailed += LevelFailed;
             CellController.OnGoodNumberOnCell += AddProgress;
+        }
+
+        private void Update()
+        {
+#if UNITY_EDITOR
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                LevelFailed();
+            }
+            else if (Input.GetKeyDown(KeyCode.C))
+            {
+                LevelCompleted();
+            }
+#endif
         }
 
         private void AddProgress()
@@ -52,12 +71,24 @@ namespace _Homa.Sudoku.Scripts.GameController
 
         private void LevelCompleted()
         {
-            OnLevelCompleted?.Invoke();
+            levelChangeAnimator.LevelCompleteAnimation();
+            sudokuTime.EndLevel();
         }
     
         private void LevelFailed()
         {
+            levelChangeAnimator.LoseLevelAnimation();
+            sudokuTime.EndLevel();
+        }
+
+        public void RaiseLevelFailed()
+        {
             OnLevelFailed?.Invoke();
+        }
+        
+        public void RaiseLevelCompleted()
+        {
+            OnLevelCompleted?.Invoke();
         }
     }
 }

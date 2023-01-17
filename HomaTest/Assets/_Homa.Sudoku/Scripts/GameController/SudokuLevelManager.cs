@@ -1,6 +1,7 @@
 using _Homa.Sudoku.Scripts.LevelData;
 using _Homa.Sudoku.Scripts.SudokuStatus.CurrentLevelIndex;
 using _Homa.Sudoku.Scripts.SudokuStatus.Mistakes;
+using _Homa.Sudoku.Scripts.SudokuStatus.TimeStat;
 using TMPro;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace _Homa.Sudoku.Scripts.GameController
         [SerializeField] private SudokuTableManager sudokuTableManager;
         [SerializeField] private MistakeSystem mistakeSystem;
         [SerializeField] private SudokuProgress sudokuProgress;
+        [SerializeField] private SudokuTime sudokuTime;
        
         [Header("References")]
         [SerializeField] private CurrentLevelIndexView currentLevelIndexView;
@@ -37,6 +39,7 @@ namespace _Homa.Sudoku.Scripts.GameController
 
         private void StartGame()
         {
+            sudokuTime.StartLevel();
             sudokuTableManager.SetupCells(_currentSudokuLevelData.TotalRows, _currentSudokuLevelData.TotalColumns, _currentSudokuLevelData.Map);  
             mistakeSystem.Setup(_currentSudokuLevelData.GetPossibleMistakes);
         }

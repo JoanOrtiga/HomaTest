@@ -8,32 +8,32 @@ namespace _Homa.Sudoku.Scripts.Cell
         public event Action OnCellClicked;
         public static event Action OnAnyCellClicked;
 
-        protected static float CellClickCooldown = 8f;
-        protected static float currentClickCooldown;
-        protected static bool canClick;
+        protected const float CellClickCooldown = 2f;
+        protected static float CurrentClickCooldown;
+        protected static bool CanClick;
 
         private void Awake()
         {
-            currentClickCooldown = CellClickCooldown;
+            CurrentClickCooldown = CellClickCooldown;
         }
         
         private void Update()
         {
-            if(canClick)
+            if(CanClick)
                 return;
-            currentClickCooldown -= Time.deltaTime;
-            if (currentClickCooldown <= 0)
+            CurrentClickCooldown -= Time.deltaTime;
+            if (CurrentClickCooldown <= 0)
             {
-                canClick = true;
-                currentClickCooldown = CellClickCooldown;
+                CanClick = true;
+                CurrentClickCooldown = CellClickCooldown;
             }
         }
 
         public virtual void Click()
         {
-            if(!canClick)
+            if(!CanClick)
                 return;
-            canClick = false;
+            CanClick = false;
             RaiseOnCellClickedEvent();
             RaiseOnAnyCellClickedEvent();
         }

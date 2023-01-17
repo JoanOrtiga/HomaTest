@@ -21,15 +21,17 @@ namespace _Homa.Sudoku.Scripts
             {
                 _currentLevel = 0;
             }
-
             LoadNewLevel();
         }
 
         public void NextLevel()
         {
             _currentLevel++;
+            if (_currentLevel >= _sudokuLevelsCollection.Levels.Count)
+            {
+                _currentLevel = 0;
+            }
             _currentLevelIndexManager.SaveLevelIndex(_currentLevel);
-            
             LoadNewLevel();
         }
         

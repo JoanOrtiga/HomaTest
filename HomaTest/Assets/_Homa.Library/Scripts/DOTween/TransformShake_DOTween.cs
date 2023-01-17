@@ -24,7 +24,7 @@ namespace _Homa.Library.Scripts.DOTween
             target.DOShakePosition(duration, strength, vibrato, randomness, snapping, fadeOut, shakeRandomnessMode);
             if (phoneVibration)
             {
-                Handheld.Vibrate();
+                Vibration.VibratePop ();
             }
         }
     }

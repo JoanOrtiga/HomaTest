@@ -16,6 +16,8 @@ namespace _Homa.Sudoku.Scripts.GameController
         
         public override void SetupCells(int totalRows, int totalColumns, SudokuCell[,] map)
         {
+            ClearGrid();
+            
             gridLayoutGroup.constraintCount = totalColumns;
             
             for (int row = 0; row < totalRows; row++)
@@ -33,6 +35,14 @@ namespace _Homa.Sudoku.Scripts.GameController
                         emptyCell.transform.SetParent(gridContainer, false);
                     }
                 }
+            }
+        }
+
+        private void ClearGrid()
+        {
+            for (int i = 0; i < gridContainer.childCount; i++)
+            {
+                Destroy(gridContainer.GetChild(i).gameObject);
             }
         }
     }

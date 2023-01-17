@@ -27,6 +27,8 @@ namespace _Homa.Sudoku.Scripts
 
         private void Start()
         {
+            Vibration.Init();
+            
             LoadSettings();
             ApplySettingsOnStartup();
         }

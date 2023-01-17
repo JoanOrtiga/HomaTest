@@ -21,12 +21,15 @@ namespace _Homa.Library.Scripts.DOTween
             transform.DOMove(target.position, duration).SetEase(ease);
         }
 
-        public void StartAnimation(Transform animEndPoint, float animDuration, Transform animStartPoint = null)
+        public Tween StartAnimation(Transform animEndPoint, float animDuration, Transform animStartPoint = null, Ease overrideEase = Ease.INTERNAL_Zero)
         {
             if (animStartPoint != null)
                 transform.position = animStartPoint.position;
             DG.Tweening.DOTween.Kill(transform);
-            transform.DOMove(animEndPoint.position, animDuration).SetEase(ease).onComplete += () => onComplete?.Invoke();
+            var tween = transform.DOMove(animEndPoint.position, animDuration)
+                .SetEase(overrideEase == Ease.INTERNAL_Zero ? ease : overrideEase);
+            tween.onComplete += () => onComplete?.Invoke();
+            return tween;
         }
     }
 }
