@@ -23,6 +23,11 @@ namespace _Homa.Sudoku.Scripts.GameController
             _scaleUIMap = scaleUIMap;
         }
 
+        public void StopAnimations()
+        {
+            StopCoroutine(OnCalculateAnimationEnded());
+        }
+
         public void StartAnimation(Vector2Int position)
         {
             AnimateCells(_scaleUIMap, new Vector2Int(position.y, position.x));

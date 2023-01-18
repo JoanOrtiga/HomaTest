@@ -30,7 +30,7 @@ namespace _Homa.Sudoku.Scripts.Cell
 
         private void CellGotClicked()
         {
-            if (SudokuClickAction.Instance.SelectedNumber != 0)
+            if (SudokuClickAction.Instance.SelectedNumber == 0)
                 return;
             if(IsInputCorrect(SudokuClickAction.Instance.SelectedNumber) && SudokuClickAction.Instance.SelectedNumber != 0)
             {

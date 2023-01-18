@@ -47,6 +47,8 @@ namespace _Homa.Sudoku.Scripts.GameController
 
         private void ClearGrid()
         {
+            sudokuTableAnimator.StopAnimations();
+            
             for (int i = 0; i < gridContainer.childCount; i++)
             {
                 Destroy(gridContainer.GetChild(i).gameObject);
