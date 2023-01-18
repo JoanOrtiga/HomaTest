@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _Homa.Sudoku.Scripts.Sounds
 {
-    [RequireComponent(typeof(AudioSource))]
+    [RequireComponent(typeof(AudioSource), typeof(AudioSource))]
     public class SoundSystem : Singleton<SoundSystem>
     {
         [SerializeField] private AudioListener audioListener;
@@ -21,35 +21,19 @@ namespace _Homa.Sudoku.Scripts.Sounds
             soundSource.loop = false;
             musicSource.loop = true;
 
-            Settings.Instance.OnEffectsEnabledChange += SetSoundEffectsEnabled;
-            Settings.Instance.OnMusicEnabledChange += SetMusicEnabled;
-        }
-
-        private void OnDisable()
-        {
-            Settings.Instance.OnEffectsEnabledChange -= SetSoundEffectsEnabled;
-            Settings.Instance.OnMusicEnabledChange -= SetMusicEnabled;
-        }
-
-        private void SetSoundEffectsEnabled(bool enabled)
-        {
-            AreSoundsEnabled = enabled;
-        }
-
-        private void SetMusicEnabled(bool enabled)
-        {
-            IsMusicEnabled = enabled;
+            Settings.Instance.OnEffectsEnabledChange += SetMuteSounds;
+            Settings.Instance.OnMusicEnabledChange += SetMuteMusic;
         }
 
         /// <summary>
         /// Plays a sound once
         /// </summary>
         /// <param name="sound">Sound to play</param>
-        public void PlaySound(Sound sound, float volume = 1f)
+        public void PlaySound(Sound sound)
         {
-            soundSource.volume = AreSoundsEnabled ? volume : 0f;
-            soundSource.pitch = sound.pitch;
-            soundSource.PlayOneShot(sound.clip);
+            soundSource.volume = AreSoundsEnabled ? sound.Volume : 0f;
+            soundSource.pitch = sound.Pitch;
+            soundSource.PlayOneShot(sound.AudioClip);
         }
 
         /// <summary>
@@ -58,15 +42,21 @@ namespace _Homa.Sudoku.Scripts.Sounds
         /// <param name="sound">Sound to play</param>
         public void PlayMusic(Sound sound)
         {
-            if (sound.clip == musicSource.clip)
+            if (sound.AudioClip == null)
             {
-                Debug.LogWarning($"Sound {sound.clip.name} already playing");
+                Debug.LogWarning($"Sound \"{sound.name}\" doesn't have AudioClip attached.");
+                return;
+            }
+                
+            if (sound.AudioClip == musicSource.clip)
+            {
+                Debug.LogWarning($"Sound {sound.AudioClip.name} already playing");
                 return;
             }
             
-            musicSource.clip = sound.clip;
-            musicSource.volume = IsMusicEnabled ? sound.volume : 0f;
-            musicSource.pitch = sound.pitch;
+            musicSource.clip = sound.AudioClip;
+            musicSource.volume = IsMusicEnabled ? sound.Volume : 0f;
+            musicSource.pitch = sound.Pitch;
             musicSource.Play();
         }
 
@@ -74,26 +64,15 @@ namespace _Homa.Sudoku.Scripts.Sounds
         {
             AreSoundsEnabled = mute;
             soundSource.volume = AreSoundsEnabled ? 1f : 0f;
-            PlayerPrefs.SetInt(SOUND_PREFS_KEY, AreSoundsEnabled ? 1 : 0);
         }
 
         public void SetMuteMusic(bool mute)
         {
             IsMusicEnabled = mute;
             musicSource.volume = IsMusicEnabled ? 0.7f : 0f;
-            PlayerPrefs.SetInt(MUSIC_PREFS_KEY, IsMusicEnabled ? 1 : 0);
         }
 
         public bool AreSoundsEnabled { get; private set; } = true;
         public bool IsMusicEnabled { get; private set; } = true;
-    }
-
-    public class PlaySound : MonoBehaviour
-    {
-
-        public void PlaySound()
-        {
-            SoundSystem.Instance.Play       
-        }
     }
 }

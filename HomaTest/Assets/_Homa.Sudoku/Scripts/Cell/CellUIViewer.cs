@@ -7,15 +7,22 @@ namespace _Homa.Sudoku.Scripts.Cell
     public class CellUIViewer : MonoBehaviour , ICellView
     {
         [SerializeField] private TextMeshProUGUI number;
+        [SerializeField] private Color colorIfInputByUser;
 
         private SudokuCellData _sudokuCellData;
         
         public void Initialize(SudokuCellData sudokuCellData)
         {
             _sudokuCellData = sudokuCellData;
-            
-            if (!sudokuCellData.inputByUser)
+
+            if (sudokuCellData.inputByUser)
+            {
+                number.color = colorIfInputByUser;
+            }
+            else
+            {
                 ShowData();
+            }
         }
 
         public void ShowData()

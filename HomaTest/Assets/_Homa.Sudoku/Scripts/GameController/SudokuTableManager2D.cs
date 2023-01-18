@@ -1,3 +1,4 @@
+using _Homa.Library.Scripts.DOTween;
 using _Homa.Sudoku.Scripts.Cell;
 using _Homa.Sudoku.Scripts.LevelData;
 using UnityEngine;
@@ -13,12 +14,15 @@ namespace _Homa.Sudoku.Scripts.GameController
         [Header("References")] 
         [SerializeField] private Transform gridContainer;
         [SerializeField] private GridLayoutGroup gridLayoutGroup;
-        
+        [SerializeField] private SudokuTableAnimator sudokuTableAnimator;
+
         public override void SetupCells(int totalRows, int totalColumns, SudokuCell[,] map)
         {
             ClearGrid();
             
             gridLayoutGroup.constraintCount = totalColumns;
+
+            var scaleUIDOTween = new ScaleUI_DOTween[totalRows,totalColumns];
             
             for (int row = 0; row < totalRows; row++)
             {
@@ -27,7 +31,8 @@ namespace _Homa.Sudoku.Scripts.GameController
                     if (map[row, col] != null)
                     {
                         var newCell = Instantiate(_cellPrefab, gridContainer);
-                        newCell.FillData(map[row,col]);
+                        newCell.FillData(map[row,col], sudokuTableAnimator);
+                        scaleUIDOTween[row, col] = newCell.GetComponent<ScaleUI_DOTween>();
                     }
                     else
                     {
@@ -36,6 +41,8 @@ namespace _Homa.Sudoku.Scripts.GameController
                     }
                 }
             }
+            
+            sudokuTableAnimator.SetScaleUIMap(scaleUIDOTween);
         }
 
         private void ClearGrid()

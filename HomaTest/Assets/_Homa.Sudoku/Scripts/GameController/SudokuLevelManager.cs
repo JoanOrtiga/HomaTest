@@ -24,6 +24,8 @@ namespace _Homa.Sudoku.Scripts.GameController
         public void StartLevel(SudokuLevelData sudokuLevelData, int levelIndex)
         {
             _currentSudokuLevelData = sudokuLevelData;
+            
+            _currentSudokuLevelData.CalculateMap();
 
             currentLevelIndexView.SetLevelIndex(levelIndex);
             

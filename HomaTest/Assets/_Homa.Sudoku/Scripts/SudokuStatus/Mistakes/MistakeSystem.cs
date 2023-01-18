@@ -1,6 +1,7 @@
 using System;
 using _Homa.Sudoku.Scripts.Cell;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace _Homa.Sudoku.Scripts.SudokuStatus.Mistakes
 {
@@ -10,8 +11,9 @@ namespace _Homa.Sudoku.Scripts.SudokuStatus.Mistakes
 
         private int _currentMistakes;
         private int _totalPossibleMistakes;
-
         public event Action OnLevelFailed;
+
+        [SerializeField] private UnityEvent OnMadeMistake;
 
         private void Awake()
         {
@@ -28,6 +30,7 @@ namespace _Homa.Sudoku.Scripts.SudokuStatus.Mistakes
         private void MakeMistake()
         {
             _currentMistakes++;
+            OnMadeMistake?.Invoke();
             mistakesDisplayUI.ShowMistake(_currentMistakes);
 
             if (_currentMistakes >= _totalPossibleMistakes)

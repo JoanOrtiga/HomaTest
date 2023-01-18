@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 14673387}
   m_Layer: 0
-  m_Name: ---CANVAS--------------------------------------------------------------------------------------------
+  m_Name: ---MAINMENU--------------------------------------------------------------------------------------------
     (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &19393780
 GameObject:
@@ -165,8 +165,9 @@ GameObject:
   m_Component:
   - component: {fileID: 19393781}
   - component: {fileID: 19393782}
+  - component: {fileID: 19393783}
   m_Layer: 0
-  m_Name: Mistake System
+  m_Name: Sudoku Mistake System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,7 +186,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &19393782
 MonoBehaviour:
@@ -200,6 +201,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mistakesDisplayUI: {fileID: 99530216}
+  OnMadeMistake:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 19393783}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.Sounds.PlayEffectsAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &19393783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19393780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fbf61b6af84f0fb7f43ff56f558f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 11400000, guid: 5bc38eed2f7b4dc4cab860895082f3a2, type: 2}
 --- !u!1 &57521158
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +572,7 @@ GameObject:
   - component: {fileID: 84298624}
   - component: {fileID: 84298623}
   - component: {fileID: 84298622}
+  - component: {fileID: 84298625}
   m_Layer: 5
   m_Name: BackIcon
   m_TagString: Untagged
@@ -626,6 +656,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 84298625}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.Sounds.PlayEffectsAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &84298623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,6 +706,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84298620}
   m_CullTransparentMesh: 1
+--- !u!114 &84298625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84298620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fbf61b6af84f0fb7f43ff56f558f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 11400000, guid: f9253a743612b674ab3b220b6539bf13, type: 2}
 --- !u!1 &87887261
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,6 +1647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 190659942}
   - component: {fileID: 190659943}
+  - component: {fileID: 190659944}
   m_Layer: 0
   m_Name: Sudoku TableManager
   m_TagString: Untagged
@@ -1612,7 +1668,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &190659943
 MonoBehaviour:
@@ -1629,6 +1685,20 @@ MonoBehaviour:
   _cellPrefab: {fileID: 8964172026386379043, guid: 27d2bc89661464845be155c2f66e08c4, type: 3}
   gridContainer: {fileID: 1897153261}
   gridLayoutGroup: {fileID: 1897153262}
+  sudokuTableAnimator: {fileID: 190659944}
+--- !u!114 &190659944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190659941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77e6b08e4d4441e9b602af5ac27251f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.1
 --- !u!1 &203649697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,7 +1728,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &208936790
 GameObject:
@@ -1710,6 +1780,7 @@ GameObject:
   - component: {fileID: 213774230}
   - component: {fileID: 213774229}
   - component: {fileID: 213774231}
+  - component: {fileID: 213774232}
   m_Layer: 5
   m_Name: SettingsPanel
   m_TagString: Untagged
@@ -1798,6 +1869,19 @@ MonoBehaviour:
   onComplete:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &213774232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213774227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fbf61b6af84f0fb7f43ff56f558f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 11400000, guid: 1b2bd256b10f7894898cc757fefea008, type: 2}
 --- !u!1 &244700705
 GameObject:
   m_ObjectHideFlags: 0
@@ -2022,7 +2106,7 @@ RectTransform:
   - {fileID: 1536522029}
   - {fileID: 213774228}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3015,7 +3099,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &351116436
 MonoBehaviour:
@@ -3639,6 +3723,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 213774232}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.Sounds.PlayEffectsAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &449440002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3937,6 +4033,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 213774232}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.Sounds.PlayEffectsAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &464712924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4045,6 +4153,7 @@ GameObject:
   - component: {fileID: 484936255}
   - component: {fileID: 484936254}
   - component: {fileID: 484936253}
+  - component: {fileID: 484936257}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -4130,6 +4239,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 484936257}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.Sounds.PlayEffectsAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1480555156}
         m_TargetAssemblyTypeName: ScaleUI_DOTween, Assembly-CSharp
         m_MethodName: PlayFullAnimation
@@ -4216,6 +4337,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484936251}
   m_CullTransparentMesh: 1
+--- !u!114 &484936257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484936251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fbf61b6af84f0fb7f43ff56f558f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 11400000, guid: 0f068ec4ea1cff14b9967f8dfefdc306, type: 2}
 --- !u!1 &500349428
 GameObject:
   m_ObjectHideFlags: 0
@@ -4627,7 +4761,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &528977496
 GameObject:
@@ -5785,6 +5919,7 @@ GameObject:
   - component: {fileID: 624529888}
   - component: {fileID: 624529889}
   - component: {fileID: 624529890}
+  - component: {fileID: 624529891}
   m_Layer: 5
   m_Name: Sudoku Select Numbers
   m_TagString: Untagged
@@ -5892,6 +6027,19 @@ MonoBehaviour:
   - changeColorButton: {fileID: 636904139}
     changeColorText: {fileID: 2039487799}
     changeScaleButton: {fileID: 636904138}
+--- !u!114 &624529891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624529885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fbf61b6af84f0fb7f43ff56f558f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 11400000, guid: 469889ae62f53e942bcff5262dacc94b, type: 2}
 --- !u!1 &633015677
 GameObject:
   m_ObjectHideFlags: 0
@@ -5922,7 +6070,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &633015679
 MonoBehaviour:
@@ -6776,7 +6924,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &698779635
 GameObject:
@@ -6829,7 +6977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.42745098, g: 0.44705883, b: 0.7647059, a: 1}
+  m_Color: {r: 0.17254902, g: 0.098039225, b: 0.4156863, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6954,6 +7102,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.UI.OptionToggleView, Assembly-CSharp
         m_MethodName: SetToggle
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 213774232}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.Sounds.PlayEffectsAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7729,7 +7889,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &759331782
 MonoBehaviour:
@@ -8137,7 +8297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &772060445
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8453,7 +8613,7 @@ RectTransform:
   - {fileID: 260070430}
   - {fileID: 779928347}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8731,6 +8891,8 @@ GameObject:
   - component: {fileID: 833229024}
   - component: {fileID: 833229026}
   - component: {fileID: 833229025}
+  - component: {fileID: 833229028}
+  - component: {fileID: 833229027}
   m_Layer: 5
   m_Name: SudokuView
   m_TagString: Untagged
@@ -8807,6 +8969,8 @@ MonoBehaviour:
   moveUI: {fileID: 833229026}
   fadeText: {fileID: 391327595}
   moveText: {fileID: 391327594}
+  winAudio: {fileID: 833229028}
+  loseAudio: {fileID: 833229027}
   winText: Level complete!
   loseText: Level failed!
   targetLeft: {fileID: 1714012224}
@@ -8848,6 +9012,32 @@ MonoBehaviour:
   onComplete:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &833229027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833229023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fbf61b6af84f0fb7f43ff56f558f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 11400000, guid: 1eeb29a08917cd74997a6c89168268f6, type: 2}
+--- !u!114 &833229028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833229023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fbf61b6af84f0fb7f43ff56f558f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 11400000, guid: 4f1741789f58e274893f3c07b7e4dc2d, type: 2}
 --- !u!1 &833974246
 GameObject:
   m_ObjectHideFlags: 0
@@ -9386,6 +9576,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 213774232}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.Sounds.PlayEffectsAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &880757291
 GameObject:
   m_ObjectHideFlags: 0
@@ -9792,6 +9994,7 @@ GameObject:
   - component: {fileID: 973029994}
   - component: {fileID: 973029993}
   - component: {fileID: 973029992}
+  - component: {fileID: 973029995}
   m_Layer: 5
   m_Name: ShopButton
   m_TagString: Untagged
@@ -9876,6 +10079,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 973029995}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.Sounds.PlayEffectsAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &973029993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9914,6 +10129,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973029990}
   m_CullTransparentMesh: 1
+--- !u!114 &973029995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973029990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fbf61b6af84f0fb7f43ff56f558f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 11400000, guid: f9253a743612b674ab3b220b6539bf13, type: 2}
 --- !u!1 &977436080
 GameObject:
   m_ObjectHideFlags: 0
@@ -10427,7 +10655,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1072939843
 GameObject:
@@ -11122,7 +11350,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1668140831}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 833229025}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.LevelChangeAnimator, Assembly-CSharp
+        m_MethodName: LoseLevelAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1126080553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11519,6 +11759,7 @@ GameObject:
   - component: {fileID: 1144234563}
   - component: {fileID: 1144234562}
   - component: {fileID: 1144234564}
+  - component: {fileID: 1144234565}
   m_Layer: 5
   m_Name: BackIcon
   m_TagString: Untagged
@@ -11640,6 +11881,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1144234565}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.Sounds.PlayEffectsAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1144234565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144234560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fbf61b6af84f0fb7f43ff56f558f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 11400000, guid: f9253a743612b674ab3b220b6539bf13, type: 2}
 --- !u!1 &1154958837
 GameObject:
   m_ObjectHideFlags: 0
@@ -12079,6 +12345,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181708756}
   m_CullTransparentMesh: 1
+--- !u!1 &1183104597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1183104598}
+  m_Layer: 0
+  m_Name: ---MAIN SUDOKU--------------------------------------------------------------------------------------------
+    (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1183104598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183104597}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1188523465
 GameObject:
   m_ObjectHideFlags: 0
@@ -12567,7 +12865,7 @@ RectTransform:
   - {fileID: 1328599874}
   - {fileID: 500349432}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13518,6 +13816,7 @@ GameObject:
   - component: {fileID: 1449374431}
   - component: {fileID: 1449374430}
   - component: {fileID: 1449374429}
+  - component: {fileID: 1449374432}
   m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -13602,6 +13901,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1449374432}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.Sounds.PlayEffectsAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1449374430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13640,6 +13951,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449374427}
   m_CullTransparentMesh: 1
+--- !u!114 &1449374432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449374427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fbf61b6af84f0fb7f43ff56f558f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 11400000, guid: f9253a743612b674ab3b220b6539bf13, type: 2}
 --- !u!1 &1452674921
 GameObject:
   m_ObjectHideFlags: 0
@@ -13749,7 +14073,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1459912917
 GameObject:
@@ -14020,6 +14344,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.UI.OptionToggleView, Assembly-CSharp
         m_MethodName: SetToggle
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 213774232}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.Sounds.PlayEffectsAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -14535,7 +14871,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1563769736
 MonoBehaviour:
@@ -14744,6 +15080,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 213774232}
+        m_TargetAssemblyTypeName: _Homa.Sudoku.Scripts.Sounds.PlayEffectsAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1603690568
 GameObject:
   m_ObjectHideFlags: 0
@@ -14790,7 +15138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1621127648}
   m_Layer: 0
-  m_Name: ---MANAGERS--------------------------------------------------------------------------------------------
+  m_Name: ---GENERAL MANAGERS--------------------------------------------------------------------------------------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14809,7 +15157,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1629264405
 GameObject:
@@ -15859,7 +16207,7 @@ RectTransform:
   - {fileID: 208936791}
   - {fileID: 63169360}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -20933,6 +21281,261 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
+--- !u!1 &1909550099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1909550104}
+  - component: {fileID: 1909550103}
+  - component: {fileID: 1909550102}
+  - component: {fileID: 1909550101}
+  - component: {fileID: 1909550100}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1909550100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909550099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48435682876b443e80e3e941a70216b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  song: {fileID: 11400000, guid: 5d1098687910bf5459c741720cf3fae9, type: 2}
+  playOnStart: 1
+--- !u!114 &1909550101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909550099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60462cee8e2669e4c8b70fd11f60fb2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _persistent: 1
+  audioListener: {fileID: 519420029}
+--- !u!82 &1909550102
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909550099}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1909550103
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909550099}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1909550104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909550099}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1952814536
 GameObject:
   m_ObjectHideFlags: 0

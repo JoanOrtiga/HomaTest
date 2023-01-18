@@ -1,4 +1,5 @@
 using _Homa.Library.Scripts.DOTween;
+using _Homa.Sudoku.Scripts.Sounds;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -15,6 +16,8 @@ namespace _Homa.Sudoku.Scripts
         [SerializeField] private MoveUI_DOTween moveUI;
         [SerializeField] private FadeTextMeshPro_DOTween fadeText;
         [SerializeField] private MoveUI_DOTween moveText;
+        [SerializeField] private PlayEffectsAudio winAudio;
+        [SerializeField] private PlayEffectsAudio loseAudio;
         [SerializeField] private string winText = "Level complete!";
         [SerializeField] private string loseText = "Level failed!";
         
@@ -45,6 +48,7 @@ namespace _Homa.Sudoku.Scripts
         
         public void LoseLevelAnimation()
         {
+            loseAudio.PlaySound();
             moveUI.onComplete.RemoveListener(LoseLevelAnimationStep2);
             moveUI.onComplete.AddListener(LoseLevelAnimationStep2);
             moveUI.StartAnimation(targetLeft, loseDurationStep1, overrideEase:loseEaseStep1);
@@ -69,6 +73,7 @@ namespace _Homa.Sudoku.Scripts
 
         public void LevelCompleteAnimation()
         {
+            winAudio.PlaySound();
             moveUI.onComplete.RemoveListener(LevelCompleteAnimationStep2);
             moveUI.onComplete.AddListener(LevelCompleteAnimationStep2);
             moveUI.StartAnimation(targetRight, winDurationStep1, overrideEase:winEaseStep1);

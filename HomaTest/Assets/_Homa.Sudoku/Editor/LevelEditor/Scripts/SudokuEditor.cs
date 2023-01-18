@@ -59,8 +59,10 @@ namespace _Homa.Sudoku.LevelEditor.Scripts
             
             _nameField = _visualElement.Q<TextField>(SudokuEditorUXML.NameField);
             _nameField.bindingPath = SudokuLevelData.NameId;
-            _nameField.RegisterValueChangedCallback(evt => 
+            _nameField.RegisterValueChangedCallback(evt =>
             {
+                if (_currentSudokuLevelData == null)
+                    return;
                 _currentSudokuLevelData.Id = evt.newValue;
                 _currentSudokuLevelData.name = evt.newValue;
                 _sudokuLevelEditor.UpdateItem(_currentSudokuLevelData);
@@ -108,7 +110,7 @@ namespace _Homa.Sudoku.LevelEditor.Scripts
             _levelSelected.Bind(_sudokuLevelDataSerialized);
             SetItemSelected(true);
             
-            _sudokuBoard.BuildBoard(sudokuLevelData.Cells, sudokuLevelData.TotalRows, sudokuLevelData.totalColumns, _sudokuLevelDataSerialized.FindProperty(SudokuLevelData.NameCells));
+            _sudokuBoard.BuildBoard(sudokuLevelData.Cells, sudokuLevelData.TotalRows, sudokuLevelData.TotalColumns, _sudokuLevelDataSerialized.FindProperty(SudokuLevelData.NameCells));
         }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using _Homa.Library.Scripts.DOTween;
+using _Homa.Sudoku.Scripts.Sounds;
 using UnityEngine;
 
 namespace _Homa.Sudoku.Scripts.UI
@@ -22,7 +23,15 @@ namespace _Homa.Sudoku.Scripts.UI
 
         [SerializeField] private List<SelectNumberItem> _selectNumberItems;
 
+        private PlayEffectsAudio _playEffectsAudio;
+
         private int lastSelectedNumber = -1;
+
+        private void Awake()
+        {
+            _playEffectsAudio = GetComponent<PlayEffectsAudio>();
+        }
+
         public void SetCurrentItem(int newSelectedNumber)
         {
             newSelectedNumber--;
@@ -36,6 +45,7 @@ namespace _Homa.Sudoku.Scripts.UI
             }
 
             lastSelectedNumber = newSelectedNumber;
+            _playEffectsAudio.PlaySound();
             
             var newSelectedItem = _selectNumberItems[newSelectedNumber];
             newSelectedItem.changeColorButton.PlayAnimation(_selectedButton);

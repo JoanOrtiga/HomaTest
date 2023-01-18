@@ -1,4 +1,3 @@
-using System;
 using _Homa.Sudoku.Editor.LevelEditor.Scripts;
 using _Homa.Sudoku.LevelEditor.Scripts;
 using _Homa.Sudoku.Scripts.LevelData;
@@ -15,13 +14,13 @@ namespace _Homa.Sudoku.Scripts.Editor.SudokuLevelEditor
         private SudokuLevelSelector _sudokuLevelSelector;
         
 
-        [MenuItem("Tools/Sudoku/Level Editor")]
+        [MenuItem("Tools/Sudoku/LevelEditor", isValidateFunction: false, priority = 1)]
         public static void OpenSudokuLevelEditor()
         {
             NewWindow();
         }
         
-        [MenuItem("Tools/Sudoku/Level Editor Close")]
+        [MenuItem("Tools/Sudoku/LevelEditorClose", priority = 13)]
         public static void Close()
         {
             SudokuLevelEditor wnd = GetWindow<SudokuLevelEditor>();

@@ -76,7 +76,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4285143340
-  m_fontColor: {r: 0.17254902, g: 0.098039225, b: 0.4156863, a: 1}
+  m_fontColor: {r: 0.34901962, g: 0.25490198, b: 0.6627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 8964172026386379043}
   - component: {fileID: 1678508037384017502}
   - component: {fileID: 7564807763653675460}
+  - component: {fileID: 742544276924230379}
   m_Layer: 5
   m_Name: Cell
   m_TagString: Untagged
@@ -240,6 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: {fileID: 223580910788734659}
+  colorIfInputByUser: {r: 0.17254902, g: 0.098039225, b: 0.4156863, a: 1}
 --- !u!114 &7564807763653675460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,3 +254,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5d16805243649d68eccd539b47cebfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &742544276924230379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8964172026386379047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7ddc9648e058641b4a9c07df66bd9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleUpEase: 12
+  scaleDownEase: 12
+  sizeTarget: {x: 1.1, y: 1.1, z: 1}
+  scaleUpDuration: 0.3
+  timeBetweenAnimation: 0
+  scaleDownDuration: 0.3
+  minScale: {x: 1, y: 1, z: 1}
+  click: 0
+  hoverEnter: 0
+  hoverExit: 0

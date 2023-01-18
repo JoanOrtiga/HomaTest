@@ -2,9 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using _Homa.Sudoku.Scripts.LevelData;
-using NUnit.Framework;
 using UnityEditor.UIElements;
-using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace _Homa.Sudoku.Editor.LevelEditor.Scripts

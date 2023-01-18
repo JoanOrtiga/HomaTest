@@ -10,7 +10,8 @@ namespace _Homa.Sudoku.Scripts.Cell
         private ICellView _cellView;
         private CellClick _cellClick;
 
-        private SudokuCellData _sudokuCellData;
+        private SudokuCell _sudokuCell;
+        private SudokuTableAnimator _sudokuTableAnimator;
 
         public static event Action OnWrongNumberOnCell;
         public static event Action OnGoodNumberOnCell;
@@ -29,9 +30,12 @@ namespace _Homa.Sudoku.Scripts.Cell
 
         private void CellGotClicked()
         {
+            if (SudokuClickAction.Instance.SelectedNumber != 0)
+                return;
             if(IsInputCorrect(SudokuClickAction.Instance.SelectedNumber) && SudokuClickAction.Instance.SelectedNumber != 0)
             {
                 _cellView.ShowData();
+                _sudokuTableAnimator.StartAnimation(_sudokuCell.position);
                 _cellClick.enabled = false;
                 OnGoodNumberOnCell?.Invoke();
             }
@@ -41,20 +45,21 @@ namespace _Homa.Sudoku.Scripts.Cell
             }
         }
 
-        public void FillData(SudokuCell sudokuCell)
+        public void FillData(SudokuCell sudokuCell, SudokuTableAnimator sudokuTableAnimator)
         {
-            _sudokuCellData = sudokuCell.data;
-            if (!_sudokuCellData.inputByUser)
+            _sudokuTableAnimator = sudokuTableAnimator;
+            _sudokuCell = sudokuCell;
+            if (!_sudokuCell.data.inputByUser)
             {
                 _cellClick.OnCellClicked -= CellGotClicked;
                 Destroy(_cellClick);
             }
-            _cellView.Initialize(_sudokuCellData);
+            _cellView.Initialize(_sudokuCell.data);
         }
 
         public bool IsInputCorrect(int numInput)
         {
-            return numInput == _sudokuCellData.numValue;
+            return numInput == _sudokuCell.data.numValue;
         }
     }
 }
